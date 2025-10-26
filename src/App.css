@@ -6,6 +6,43 @@
   animation: typing 3s steps(20, end), blink 0.7s infinite;
 }
 
+/* 🌈 Animated Gradient Background */
+.animated-bg {
+  background: linear-gradient(-45deg, #000000, #000d31, #090825, #01202f);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.animated-bga {
+  background: linear-gradient(45deg, #000000, #000d31, #090825, #01202f);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 @keyframes typing {
   from {
     width: 0;

@@ -29,7 +29,7 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen py-16 bg-gray-800 text-center px-6 md:px-16"
+      className="min-h-screen py-16 bg-gray-800 text-center px-6 md:px-16 animated-bga"
     >
       <h2 className="text-4xl mt-8 font-bold text-blue-400">
         My <span className="text-white">Portfolio</span>
@@ -44,7 +44,7 @@ const Portfolio = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="w-80 bg-gray-900 p-4 rounded-lg shadow-lg group overflow-hidden cursor-pointer"
+            className="w-80 bg-gray-900 p-4 rounded-lg shadow-sm shadow-blue-200 group overflow-hidden cursor-pointer"
             variants={cardVariants}
             whileHover={{ scale: 1.05 }}
           >

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,11 +14,11 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full top-0 left-0 bg-gray-800 shadow-md z-50 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4">
+    <header className="fixed w-full top-0 left-0 backdrop-blur-sm z-50 px-6 md:px-16 transition-all duration-300">
+      <div className="max-w-7xl mx-auto flex items-center justify-between ">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-blue-400">
-          Portfolio
+          <img src={logo} className="w-[70px] h-[70px]" />
         </Link>
 
         {/* Hamburger / Close Button */}
@@ -30,16 +31,20 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-white">
-          {["home", "about", "services", "portfolio", "contact"].map((section) => (
-            <Link
-              key={section}
-              to={`${section==="home"? "/" : section}`}
-              className={`hover:text-blue-400 ${activeSection === section ? "text-blue-400" : ""}`}
-              onClick={() => handleNavClick(section)}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Link>
-          ))}
+          {["home", "about", "services", "portfolio", "contact"].map(
+            (section) => (
+              <Link
+                key={section}
+                to={`${section === "home" ? "/" : section}`}
+                className={`hover:text-blue-400 ${
+                  activeSection === section ? "text-blue-400" : ""
+                }`}
+                onClick={() => handleNavClick(section)}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Link>
+            )
+          )}
         </nav>
       </div>
 
@@ -50,16 +55,20 @@ const Header = () => {
         } overflow-hidden`}
       >
         <nav className="flex flex-col items-center space-y-4 py-4 text-white">
-          {["home", "about", "services", "portfolio", "contact"].map((section) => (
-            <Link
-              key={section}
-              to={`${section==="home"? "/" : section}`}
-              className={`hover:text-blue-400 ${activeSection === section ? "text-blue-400" : ""}`}
-              onClick={() => handleNavClick(section)}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Link>
-          ))}
+          {["home", "about", "services", "portfolio", "contact"].map(
+            (section) => (
+              <Link
+                key={section}
+                to={`${section === "home" ? "/" : section}`}
+                className={`hover:text-blue-400 ${
+                  activeSection === section ? "text-blue-400" : ""
+                }`}
+                onClick={() => handleNavClick(section)}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Link>
+            )
+          )}
         </nav>
       </div>
     </header>

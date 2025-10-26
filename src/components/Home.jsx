@@ -14,7 +14,7 @@ const Home = () => {
       {/* ✅ HERO SECTION */}
       <section
         id="home"
-        className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-6 md:px-16 overflow-hidden"
+        className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-16 overflow-hidden animated-bg relative"
       >
         {/* Left Content */}
         <motion.div
@@ -50,7 +50,7 @@ const Home = () => {
           >
             And I'm a{" "}
             <span className="text-blue-400 typing-animation">
-              Web Developer
+              App & Web Developer
             </span>
           </motion.h3>
 
@@ -99,7 +99,7 @@ const Home = () => {
 
           {/* Download CV Button */}
           <motion.a
-            href="https://app.luminpdf.com/viewer/6472ee0ce0a0c57d5936728a"
+            href="/latestCv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="
